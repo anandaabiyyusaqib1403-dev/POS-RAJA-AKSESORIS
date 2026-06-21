@@ -2,25 +2,26 @@
 
 Repository: https://github.com/anandaabiyyusaqib1403-dev/POS-RAJA-AKSESORIS
 
-Website Point of Sale untuk counter HP Raja Aksesoris dengan alur kasir, input transaksi digital, manajemen produk, dashboard laporan, dan cetak struk thermal 58mm.
+Aplikasi Point of Sale untuk toko aksesoris HP Raja Aksesoris. Dirancang untuk memudahkan kasir menangani transaksi tunai dan digital, mengelola produk, memantau stok, dan menghasilkan laporan bisnis secara cepat.
 
-## Stack
+## Teknologi
 
-- React + Vite
-- Tailwind CSS
-- Supabase Auth + PostgreSQL
-- Vercel
+- React + Vite untuk frontend modern
+- Tailwind CSS untuk UI responsif
+- Supabase Auth + PostgreSQL untuk autentikasi dan data
+- Express backend untuk integrasi notifikasi dan layanan pendukung
+- Vercel untuk deployment frontend
 
-## Fitur utama
+## Fitur Utama
 
 - Login role-based untuk `kasir` dan `pemilik`
-- Halaman `/kasir` untuk transaksi aksesoris dan cetak struk
-- Halaman `/kasir/digital` untuk pencatatan pulsa, kuota, voucher, dan token
-- Halaman `/produk` untuk kelola produk, stok minimum, dan stok masuk
-- Halaman `/dashboard` untuk ringkasan omzet, grafik omzet, metode bayar, top produk, dan export CSV
-- Mode demo fallback saat env Supabase belum diisi
+- Transaksi aksesoris cepat dengan cetak struk thermal 58mm
+- Input transaksi digital: pulsa, paket data, voucher, dan token
+- Manajemen produk, stok minimum, dan stok masuk
+- Dashboard penjualan dengan ringkasan omzet, grafik, top produk, dan export CSV
+- Mode demo saat environment Supabase belum dikonfigurasi
 
-## Setup lokal
+## Persiapan Lokal
 
 1. Install dependency:
 
@@ -28,22 +29,37 @@ Website Point of Sale untuk counter HP Raja Aksesoris dengan alur kasir, input t
 npm install
 ```
 
-2. Buat file `.env`:
+2. Buat file `.env` di root proyek:
 
 ```bash
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-3. Jalankan migration SQL di `supabase/migrations/20260412_raja_aksesoris_pos.sql`
+3. Jalankan migration SQL jika diperlukan:
 
-4. Jalankan app:
+```bash
+# Jalankan SQL di Supabase atau tool migration yang Anda gunakan
+supabase/migrations/20260412_raja_aksesoris_pos.sql
+```
+
+4. Jalankan aplikasi frontend:
 
 ```bash
 npm run dev
 ```
 
-## Demo login
+5. Jika backend digunakan untuk notifikasi atau integrasi tambahan:
+
+```bash
+npm --prefix backend run dev
+```
+
+## Akun Demo
 
 - `owner@raja.test` / `demo123`
 - `kasir@raja.test` / `demo123`
+
+## Catatan
+
+Pastikan variabel environment Supabase sudah diisi dengan benar agar autentikasi dan data berfungsi penuh. Jika backend dijalankan, jalankan server backend secara terpisah sebelum membuka aplikasi frontend.
